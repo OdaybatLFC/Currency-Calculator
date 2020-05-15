@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" manifest="manifest.appcache">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="800x800" href="images/cal.jpg" />
+    <link rel="stylesheet" type="text/css" href="normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title >Calculator</title>
+</head>
+<body onload="load()">
+  <header>Currency Calculator</header>
+  <main>
+      <div id="tableDiv">
+          <table id="calc" border="10">
+              <tr>
+                  <td rowspan="5" valign="top"><input type="image" src="images/menu-alt-512.png" alt="Menu" width="40" height="40"
+                                                      id="menuImg" onclick="openNav()"/></td>
+                  <td colspan="3"><input type="text" id="result" disabled /></td>
+              </tr>
+              <tr>
+                  <td><input type="button" value="1" onclick="displayValue('1')"/> </td>
+                  <td><input type="button" value="2" onclick="displayValue('2')"/> </td>
+                  <td><input type="button" value="3" onclick="displayValue('3')"/> </td>
+              </tr>
+              <tr>
+                  <td><input type="button" value="4" onclick="displayValue('4')"/> </td>
+                  <td><input type="button" value="5" onclick="displayValue('5')"/> </td>
+                  <td><input type="button" value="6" onclick="displayValue('6')"/> </td>
+              </tr>
+              <tr>
+                  <td><input type="button" value="7" onclick="displayValue('7')"/> </td>
+                  <td><input type="button" value="8" onclick="displayValue('8')"/> </td>
+                  <td><input type="button" value="9" onclick="displayValue('9')"/> </td>
+              </tr>
+              <tr>
+                  <td><input type="button" value="c" onclick="clearDisplay()"/> </td>
+                  <td><input type="button" value="0" onclick="displayValue('0')"/> </td>
+                  <td><input type="button" value="=" onclick="convertRate()"/> </td>
+              </tr>
+          </table>
+      </div>
+      <div id="mySidenav" class="sidenav">
+          <input type="image" src="images/back.png" alt="Button" id="back" onclick="closeNav()"/>
+          <input type="button" value="Home" class="menu" id="home" onclick="option('home')">
+          <input type="button" value="Visiting" class="menu" id="visit" onclick="option('visiting')" >
+          <input type="button" value="Bank Fee" class="menu" id="bank" onclick="option('fee')">
+          <label id="l1">Home</label>
+          <label id="l2">Visiting</label>
+          <label id="l3">Bank fee</label>
+          <input type="button" value="0%" id="0" class="fee zero" onclick="fee('0')">
+          <input type="button" value="2%" id="2" class="fee" onclick="fee('2')">
+          <input type="button" value="4%" id="4" class="fee" onclick="fee('4')">
+          <input type="button" value="6%" id="6" class="fee" onclick="fee('6')">
+          <input type="image" src="images/EUR.gif" class="flag" alt="EUR" onclick="changeCurrency('EUR')"/>
+          <input type="image" src="images/USA.png" class="flag" alt="USD" onclick="changeCurrency('USD')"/>
+          <input type="image" src="images/BG.png" class="flag" alt="BGN" onclick="changeCurrency('BGN')"/>
+          <input type="image" src="images/JPN.png" class="flag" alt="JPY" onclick="changeCurrency('JPY')"/>
+          <input type="image" src="images/CZH.svg" class="flag" alt="CZK" onclick="changeCurrency('CZK')"/>
+          <input type="image" src="images/DKK.png" class="flag" alt="DKK" onclick="changeCurrency('DKK')"/>
+          <input type="image" src="images/GBP.webp" class="flag" alt="GBP" onclick="changeCurrency('GBP')"/>
+          <input type="image" src="images/HUF.svg" class="flag" alt="HUF" onclick="changeCurrency('HUF')"/>
+          <input type="image" src="images/PLN.svg" class="flag" alt="PLN" onclick="changeCurrency('PLN')"/>
+          <input type="image" src="images/RON.webp" class="flag" alt="RON" onclick="changeCurrency('RON')"/>
+          <input type="image" src="images/SEK.svg" class="flag" alt="SEK" onclick="changeCurrency('SEK')"/>
+          <input type="image" src="images/CHF.png" class="flag" alt="CHF" onclick="changeCurrency('CHF')"/>
+          <input type="image" src="images/ISK.png" class="flag" alt="ISK" onclick="changeCurrency('ISK')"/>
+          <input type="image" src="images/NOK.png" class="flag" alt="NOK" onclick="changeCurrency('NOK')"/>
+          <input type="image" src="images/HRK.png" class="flag" alt="HRK" onclick="changeCurrency('HRK')"/>
+          <input type="image" src="images/RUB.svg" class="flag" alt="RUB" onclick="changeCurrency('RUB')"/>
+          <input type="image" src="images/TRY.webp" class="flag" alt="TRY" onclick="changeCurrency('TRY')"/>
+          <input type="image" src="images/AUD.png" class="flag" alt="AUD" onclick="changeCurrency('AUD')"/>
+          <input type="image" src="images/BRL.webp" class="flag" alt="BRL" onclick="changeCurrency('BRL')"/>
+          <input type="image" src="images/CAD.svg" class="flag" alt="CAD" onclick="changeCurrency('CAD')"/>
+          <input type="image" src="images/CNY.jpg" class="flag" alt="CNY" onclick="changeCurrency('CNY')"/>
+          <input type="image" src="images/HKD.svg" class="flag" alt="HKD" onclick="changeCurrency('HKD')"/>
+          <input type="image" src="images/IDR.svg" class="flag" alt="IDR" onclick="changeCurrency('IDR')"/>
+          <input type="image" src="images/ILS.jpg" class="flag" alt="ILS" onclick="changeCurrency('ILS')"/>
+          <input type="image" src="images/INR.svg" class="flag" alt="INR" onclick="changeCurrency('INR')"/>
+          <input type="image" src="images/KRW.svg" class="flag" alt="KRW" onclick="changeCurrency('KRW')"/>
+          <input type="image" src="images/MXN.jpg" class="flag" alt="MXN" onclick="changeCurrency('MXN')"/>
+          <input type="image" src="images/MYR.png" class="flag" alt="MYR" onclick="changeCurrency('MYR')"/>
+          <input type="image" src="images/NZD.png" class="flag" alt="NZD" onclick="changeCurrency('NZD')"/>
+          <input type="image" src="images/PHP.png" class="flag" alt="PHP" onclick="changeCurrency('PHP')"/>
+          <input type="image" src="images/SGD.svg" class="flag" alt="SGD" onclick="changeCurrency('SGD')"/>
+          <input type="image" src="images/THB.webp" class="flag" alt="THB" onclick="changeCurrency('THB')"/>
+          <input type="image" src="images/ZAR.jpg" class="flag" alt="ZAR" onclick="changeCurrency('ZAR')"/>
+      </div>
+
+  </main>
+  <script src="functions.js"></script>
+  <footer>CC-BY Aleksandar Odaybat</footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+* {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#calc {
+    height: calc(100vh - 3.5rem);
+    width: 100%;
+    border-color: black;
+    text-align: center;
+    background-color: #C0C0C0;
+}
+#calc input[type=button], input[type=text] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1.2rem 1.4rem;
+    text-decoration: none;
+    margin: 0.4rem 0.2rem;
+    cursor: pointer;
+    border: 0.2rem solid darkgreen;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 80%;
+    width: 80%;
+}
+
+label {
+    font-size: 2rem;
+    font-weight: bold;
+    color: bisque;
+    height: 10%;
+    width: 20%;
+    position: absolute;
+    left: 40%;
+    top: 15px;
+    display: none;
+}
+
+header, footer {
+    background-color: black;
+    color: white;
+}
+
+header {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 0.7rem;
+    line-height: 1rem;
+}
+
+main {
+    height: calc(100vh - 3.5rem);
+}
+
+
+.sidenav {
+    height: calc(100vh - 6rem);
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 2.5rem;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#back {
+    height: 10%;
+    width: 20%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.menu {
+    padding: 1.9rem 1.9rem;
+    margin: 0.9rem 0.3rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    width: 80%;
+    position: relative;
+    bottom: -10%;
+    left: 10%;
+    background-color: bisque;
+}
+.menu button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+.fee {
+    padding: 1.9rem 1.9rem;
+    margin: 0.9rem 0.3rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: none;
+    width: 80%;
+    position: relative;
+    bottom: -10%;
+    left: 10%;
+    background: bisque;
+}
+
+.zero {
+    background: greenyellow;
+}
+
+.flag {
+    display: none;
+    width: 20vw;
+    height: 10vh;
+    position: relative;
+    bottom: -10%;
+    left: 1%;
+    float: left;
+    padding: 0.5rem;
+}
